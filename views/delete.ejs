@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete</title>
+    <style>
+        body{
+            height: 100vh;
+            background-color: blueviolet;
+        }
+        form{
+            background-color: bisque;
+            text-align: center;
+            height: 20rem;
+            width: 20rem;
+            border: solid black 1px;
+            border-radius: 0.5rem;
+        }
+        .delete-info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            margin-top: 1.5rem;
+        }
+        button{
+            margin-top: 1.5rem;
+            border-radius: 0.3rem;
+            background-color: rgb(40, 40, 148);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="delete-info">
+        
+        <form action="/user/<%= user.id %>?_method=DELETE" method="post">
+            <h2>Delete-Data</h2>
+            <input type="text" name="username" placeholder="Enter username"> <br>
+            <input type="password" name="password" placeholder="Enter password"> <br>
+            <button>submit</button>
+            <p>Note : please enter your right username and password thane delete your data in database.</p>
+        </form>
+    </div>
+</body>
+</html>

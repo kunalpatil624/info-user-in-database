@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height:100vh;
+            background-color: blueviolet;
+        }
+        form{
+            background-color: bisque;
+            text-align: center;
+            border: solid black 1px;
+            width: 20rem;
+            height: 20rem;
+            border-radius: 0.5rem;
+        }
+        input{
+            margin-top: 1.5rem;
+        }
+        button{
+            margin-top: 1.5rem;
+            border-radius: 0.3rem;
+            background-color: rgb(40, 40, 148);
+            color: white;
+        }
+
+        .new-add-form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="new-add-form">
+        <form action="/user/new" method="post">
+            <h2>Add new data in database.</h2>
+            <input type="text" placeholder="Enter id" name="id"> <br>
+            <input type="text" placeholder="Enter username" name="username"> <br>
+            <input type="email" placeholder="Enter email" name="email"> <br>
+            <input type="password" name="password" placeholder="Enter password"> <br>
+            <button>submit</button>
+        </form>
+    </div>
+  
+</body>
+</html>

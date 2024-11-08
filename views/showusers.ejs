@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All users</title>
+    <style>
+        body{
+            height: 100vh;
+            background-color: blueviolet;
+        }
+        table{
+            background-color: bisque;
+        }
+        th, tr, td{
+            border: solid black 1px;
+        }
+
+        .user-info{
+            margin-top: 2rem;;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .add-data{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .add-data-btn{
+            border-radius: 0.3rem;
+            background-color: rgb(40, 40, 148);
+            color: white;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+     <h1>All users' data is saved in a SQL database</h1>
+
+    <form class="add-data" action="/user/new" method="get">
+        <button class="add-data-btn">new data add</button>
+    </form>
+
+    <div class="user-info">
+        <table>
+            <tr>
+                <th>id</th>
+                <th>username</th>
+                <th>email</th>
+            </tr>    
+    
+            <% for(let user of users){ %>
+                <tr>
+                    <td><%= user.id %></td>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td>
+                        <form action="user/<%=user.id%>/edit" method="get">
+                            <button>edit</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="user/<%=user.id%>/Delete" method="get">
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+    </div>
+    
+</body>
+</html>
+

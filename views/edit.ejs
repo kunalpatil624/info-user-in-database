@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit user</title>
+    <style> 
+        body{
+            height: 100vh;
+            background-color: blueviolet;
+        }
+
+        .edit-info{
+            text-align: center;
+        }
+
+        .edit-info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .edit-info2{
+            background-color: bisque;
+            border-radius: 0.5rem;
+            width: 25rem;
+            border: solid black 1px;
+        }
+
+        button{
+            margin-top: 1.5rem;
+            border-radius: 0.3rem;
+            background-color: rgb(40, 40, 148);
+            color: white;
+        }
+
+        input{
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="edit-info">
+        <div class="edit-info2">
+            <h3> email : <%= user.email %></h3>
+
+        <form action="/user/<%=user.id%>?_method=PATCH" method="POST"> <br>
+            <textarea name="username" > <%=user.username %></textarea> <br>
+            <input type="password" name="password" placeholder="Enter password"> <br>
+            <button>submit</button>
+            <p>note : please enter your right password.!</p>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
